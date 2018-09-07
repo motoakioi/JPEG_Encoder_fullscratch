@@ -1,5 +1,5 @@
 #include"resize.h"
 
 int resize(int original_size){
-	return ( original_size + 8 - ( original_size % 8 ) );
+	return ( original_size + 16 - ( original_size % 16 ) );
 }
