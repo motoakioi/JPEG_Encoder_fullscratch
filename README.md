@@ -8,18 +8,18 @@ Making JPEG encoder without using libraries such as libjpeg.
 Nothing completed.
 
 ## File Organization
-.
-├── CMakeLists.txt
-├── LICENSE
-├── README.md
-├── build
-│   ├── Makefile
-│   └── jpeg-enc
-└── src
-    ├── a.out
-    ├── dct.h
-    ├── main.cpp
-    └── table.h
+.  
+├── CMakeLists.txt  
+├── LICENSE  
+├── README.md  
+├── build  
+│   ├── Makefile  
+│   └── jpeg-enc  
+└── src  
+    ├── a.out  
+    ├── dct.h  
+    ├── main.cpp  
+    └── table.h  
 
 
 
