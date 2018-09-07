@@ -32,5 +32,6 @@
 *.app
 
 # make files
-/build/CMake*
-/build/cmake*
+/build/CMakeFiles
+/build/cmake_install.cmake
+
