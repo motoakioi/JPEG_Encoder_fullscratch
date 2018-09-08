@@ -3,43 +3,57 @@
 
 class RGB{
 	private:
-	public:
 		int R;
 		int G;
 		int B;
+	public:
 		RGB( int r, int g, int b ){
 			R = r;
 			G = g;
 			B = b;
 		};
+		int r_is( void ){
+			return R;
+		}
+		int g_is( void ){
+			return G;
+		}
+		int b_is( void ){
+			return B;
+		}
 };
 
 class YCbCr{
 	private:
-	public:
 		double Y;
 		double Cb;
 		double Cr;
+	public:
 		YCbCr( double y, double cb, double cr ){
 			Y = y;
 			Cb = cb;
 			Cr = cr;
 		};
+		double y_is( void ){
+			return Y;
+		}
+		double cr_is( void ){
+			return Cr;
+		}
+		double cb_is( void ){
+			return Cb;
+		}
+		double *y_ptr( void ){
+			return &Y;
+		}
+		double *cr_ptr( void ){
+			return &Cr;
+		}
+		double *cb_ptr( void ){
+			return &Cb;
+		}
 };
 
 YCbCr rgb_to_ycbcr( RGB* );
-
-/*
-class RGB_to_CbCr: public RGB, YCbCr{
-	private:
-	public:
-		RGB_to_CbCr ( RGB rgb_data, YCbCr ycbcr_data ) {
-			ycbcr_data.Y = 1.0;
-			ycbcr_data.Cb = 2.0;
-			ycbcr_data.Cr = 3.0;
-		};
-};
-*/
-
 
 #endif
