@@ -27,7 +27,7 @@ class YCbCr{
 		};
 };
 
-YCbCr rgb_to_ycbcr( RGB );
+YCbCr rgb_to_ycbcr( RGB* );
 
 /*
 class RGB_to_CbCr: public RGB, YCbCr{
