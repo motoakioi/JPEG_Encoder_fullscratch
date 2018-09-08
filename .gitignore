@@ -31,6 +31,9 @@
 *.out
 *.app
 
+# testing source
+/src/test.cpp
+
 # make files
 /build/CMakeFiles
 /build/cmake_install.cmake
