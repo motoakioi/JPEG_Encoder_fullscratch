@@ -13,7 +13,7 @@
 void encode( 
 		int ori_height, 
 		int ori_width, 
-		RGB *in_rgb){
+		std::vector<RGB>& in_rgb){
 
 	int all_pixels = ori_height * ori_width;
 	std::vector<YCbCr> in_ycbcr( all_pixels, YCbCr( 0.0, 0.0, 0.0 ) );

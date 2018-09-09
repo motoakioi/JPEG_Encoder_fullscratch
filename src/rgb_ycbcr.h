@@ -7,6 +7,7 @@ class RGB{
 		int G;
 		int B;
 	public:
+		RGB(){};
 		RGB( int r, int g, int b ){
 			R = r;
 			G = g;
@@ -20,6 +21,11 @@ class RGB{
 		}
 		int b_is( void ){
 			return B;
+		}
+		void set_data( int *in ){
+			R = *in & 0xFF;
+			G = *in & 0xFF00;
+			B = *in & 0xFF0000;
 		}
 };
 
