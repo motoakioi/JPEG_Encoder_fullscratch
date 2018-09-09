@@ -5,7 +5,13 @@ Aim for full scratch, something like that.
 Making JPEG encoder without using libraries such as libjpeg.
 
 ## Current status
-Nothing completed.
+main func :
+bmp -> RGB -> encode (midstream) ...  
+
+encode func :  
+RGB -> YCbCr -> MCU -> ...  
+
+Not done since DCT.
 
 ## File Organization
 .  
@@ -16,11 +22,21 @@ Nothing completed.
 │   ├── Makefile  
 │   └── jpeg-enc  
 └── src  
-    ├── a.out  
+    ├── bmp.h  
+    ├── dct.cpp  
     ├── dct.h  
+    ├── encoder.cpp  
+    ├── encoder.h  
     ├── main.cpp  
-    └── table.h  
-
+    ├── mcu.h  
+    ├── quantize.cpp  
+    ├── quantize.h  
+    ├── quantize_table.h  
+    ├── resize.cpp  
+    ├── resize.h  
+    ├── rgb_ycbcr.cpp  
+    ├── rgb_ycbcr.h  
+    └── table.h    
 
 
 
