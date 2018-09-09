@@ -8,6 +8,7 @@
 #include"mcu.h"
 #include"dct.h"
 #include"quantize.h"
+#include"quantize_table.h"
 
 void encode( 
 		int ori_height, 
@@ -54,30 +55,38 @@ void encode(
 			// Divide image into 16x16 blocks (MCU) and data path
 			mcu_data[ mcu_horizontal * ( y / 16 ) + ( x / 16 ) ].set_block( x, y, &in_ycbcr[ pos ] );
 
-
 			pos++;
 
 		}// for loop of x
 	}//for loop of y
+
+	// TODO : remove
 	mcu_data[ 0 ].ys();
 	mcu_data[ 0 ].bs();
 	mcu_data[ 0 ].rs();
 
 
 	for (int mcu_order = 0; mcu_order < all_mcu; mcu_order++ ){
+		for ( int mcu_comp = 0; mcu_comp < 6; mcu_comp++ ){
 
-		// DCT
-		
+			double tmp_val[8][8];
+			double tmp_dct[8][8];
+			double tmp_quant[8][8];
 
-		// Quantize
-		
+			mcu_data[ mcu_order ].read_block( mcu_comp, tmp_val );
 
-		// RunLegth
-		
+			// DCT
+			dct( tmp_val, tmp_dct );
 
-		// ZigZag Scan
-		
+			// Quantize
+			quantize( tmp_dct, tmp_quant, quantize_table );
 
+			// RunLegth
+			
+
+			// ZigZag Scan
+			
+		}// for loop of mcu_comp
 	}// for loop of mcu_order
 }// main
 

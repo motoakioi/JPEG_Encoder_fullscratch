@@ -2,6 +2,6 @@
 #define DCT_H
 
 // TODO : Once this is done
-int dct(int);
+void dct( double[8][8], double[8][8] );
 
 #endif 
