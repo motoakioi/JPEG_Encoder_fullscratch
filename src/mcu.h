@@ -18,8 +18,8 @@ class block8x8{
 			memcpy( val, in, sizeof(val) );
 		}
 		void show(void){
-			for ( int x = 0; x < 8; x++ ){
-				for ( int y = 0; y < 8; y++ ){
+			for ( int y = 0; y < 8; y++ ){
+				for ( int x = 0; x < 8; x++ ){
 					std::cout << val[x][y] << " ";
 				}
 				std::cout<<std::endl;

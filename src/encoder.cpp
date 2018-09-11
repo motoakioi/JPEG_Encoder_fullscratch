@@ -38,7 +38,7 @@ void encode(
 	for (int y = 0; y < height; y++ ) {
 		for (int x = 0; x < width; x++ ) {
 
-			std::cout<< "(" << x << "," << y << ")";
+//			std::cout<< "(" << x << "," << y << ")";
 
 			if ( x + 1 > ori_width ||  y + 1 > ori_height ){
 				pos--;
@@ -47,8 +47,8 @@ void encode(
 			in_ycbcr[ pos ] = rgb_to_ycbcr( &in_rgb[ pos ] );
 
 			// TODO : remove
-			std::cout<< " pos : " << pos << std::endl;
-/*			std::cout << "  Y:" << in_ycbcr[ pos ].y_is() 
+/*			std::cout<< " pos : " << pos << std::endl;
+			std::cout << "  Y:" << in_ycbcr[ pos ].y_is() 
 					  << ", Cb:" << in_ycbcr[ pos ].cb_is()
 					  << ", Cr:" << in_ycbcr[ pos ].cr_is() << std::endl;
 */
@@ -67,13 +67,14 @@ void encode(
 
 
 	for (int mcu_order = 0; mcu_order < all_mcu; mcu_order++ ){
-		for ( int mcu_comp = 0; mcu_comp < 6; mcu_comp++ ){
+		for ( int mcu_component = 0; mcu_component < 6; mcu_component++ ){
 
 			double tmp_val[8][8];
 			double tmp_dct[8][8];
 			double tmp_quant[8][8];
 
-			mcu_data[ mcu_order ].read_block( mcu_comp, tmp_val );
+			// copy mcu_data into tmp_val
+			mcu_data[ mcu_order ].read_block( mcu_component, tmp_val );
 
 			// DCT
 			dct( tmp_val, tmp_dct );
@@ -86,7 +87,7 @@ void encode(
 
 			// ZigZag Scan
 			
-		}// for loop of mcu_comp
+		}// for loop of mcu_component
 	}// for loop of mcu_order
 }// main
 

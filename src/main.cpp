@@ -51,11 +51,17 @@ int main(int argc, char* argv[]){
 	std::cout <<  "OK" << std::endl << "Width : " << width << ", Height : " << height << std::endl;
 	std::cout << "Loading bmp data... ";
 
+
 	for ( int y = 0; y < height; y++ ){
 		for ( int x = 0; x < width; x++ ){
 			int tmp_data;
 			bmp_image.read( (char*)&tmp_data, ( sizeof(char) * 3 ) );
 			rgb_data[ ( height - 1 - y ) * width + x ].set_data( &tmp_data ); 
+			if(x == 0 && y == 0){
+				std::cout << "R is :" << rgb_data[( height - 1 - y ) * width + x].r_is() << std::endl;
+				std::cout << "G is :" << rgb_data[( height - 1 - y ) * width + x].g_is() << std::endl;
+				std::cout << "B is :" << rgb_data[( height - 1 - y ) * width + x].b_is() << std::endl;
+			}
 		}
 	}
 

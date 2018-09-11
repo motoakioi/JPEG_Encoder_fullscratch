@@ -6,8 +6,8 @@
 YCbCr rgb_to_ycbcr( RGB* rgb_in ){
 	double Y =   0.299 * (double)rgb_in->r_is() 
 			   + 0.587 * (double)rgb_in->g_is() 
-			   + 0.114 * (double)rgb_in->b_is()
-			   - 128.0;
+			   + 0.114 * (double)rgb_in->b_is();
+
 	double Cb =  - 0.1687 * (double)rgb_in->r_is()
 				 - 0.3313 * (double)rgb_in->g_is()
 				 + 0.5    * (double)rgb_in->b_is()
