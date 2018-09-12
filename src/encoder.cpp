@@ -9,6 +9,8 @@
 #include"dct.h"
 #include"quantize.h"
 #include"quantize_table.h"
+#include"zigzag.h"
+
 
 void encode( 
 		int ori_height, 
@@ -71,7 +73,8 @@ void encode(
 
 			double tmp_val[8][8];
 			double tmp_dct[8][8];
-			double tmp_quant[8][8];
+			int tmp_quant[8][8];
+			int tmp_scand[64];
 
 			// copy mcu_data into tmp_val
 			mcu_data[ mcu_order ].read_block( mcu_component, tmp_val );
@@ -82,10 +85,12 @@ void encode(
 			// Quantize
 			quantize( tmp_dct, tmp_quant, quantize_table );
 
+			// ZigZag Scan
+			zigzag_scan( tmp_quant, tmp_scand );
+
 			// RunLegth
 			
 
-			// ZigZag Scan
 			
 		}// for loop of mcu_component
 	}// for loop of mcu_order

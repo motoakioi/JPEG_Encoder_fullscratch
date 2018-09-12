@@ -1,7 +1,7 @@
 #ifndef QUANTIZE_TABLE_H
 #define QUANTIZE_TABLE_H
 
-double quantize_table[8][8] = {
+int quantize_table[8][8] = {
 1, 1, 1, 1, 1, 1, 1, 1,
 1, 1, 1, 1, 1, 1, 1, 1,
 1, 1, 1, 1, 1, 1, 1, 1,

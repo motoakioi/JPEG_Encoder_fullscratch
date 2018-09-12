@@ -38,6 +38,7 @@ class mcu{
 //		void write_y_block( double* );
 		void write_block( int, double[8][8] );
 		void read_block( int, double[8][8] );
+		void write_line( int[64] );
 
 		void ys(void){y_block[0][0].show();};
 		void bs(void){cb_block.show();};
@@ -51,6 +52,9 @@ class mcu{
 
 		// DCT value
 		block8x8 dct[6];
+
+		// values alined in a line
+		int scaned[64];
 };
 void mcu::set_block( int mcu_x, int mcu_y, YCbCr *in_ycbcr){
 	y_block[ mcu_x / 8 ][ mcu_y / 8 ].set_val( mcu_x % 8, mcu_y % 8, in_ycbcr->y_ptr() );
@@ -66,6 +70,11 @@ void mcu::write_block( int i,  double dct_vals[8][8] ){
 }
 void mcu::read_block( int i,  double dct_vals[8][8] ){
 		dct[i].path_to( dct_vals );
+}
+void mcu::write_line( int in[64] ){
+	for ( int i = 0; i < 64; i++ ){
+		scaned[i] = in[i];
+	}
 }
 
 #endif

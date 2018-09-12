@@ -32,7 +32,7 @@
 *.app
 
 # testing source
-/src/test.cpp
+/src/test*.cpp
 
 # make files
 /build/CMakeFiles

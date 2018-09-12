@@ -2,7 +2,7 @@
 #define QUANTIZE_H
 
 
-void quantize( double[8][8], double[8][8], double[8][8] );
+void quantize( double[8][8], int[8][8], int[8][8] );
 
 
 #endif

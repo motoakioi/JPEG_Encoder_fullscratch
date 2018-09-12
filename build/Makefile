@@ -48,7 +48,7 @@ RM = /usr/local/Cellar/cmake/3.11.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch
+CMAKE_SOURCE_DIR = /Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/build
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/build
@@ -123,32 +123,194 @@ jpeg-enc/fast:
 	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/build
 .PHONY : jpeg-enc/fast
 
-src/main.o: src/main.cpp.o
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.o: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.o
 
-.PHONY : src/main.o
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.o:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.o
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.o
 
-src/main.i: src/main.cpp.i
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.i: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.i
 
-.PHONY : src/main.i
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.i:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.i
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.i
 
-src/main.s: src/main.cpp.s
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.s: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.s
 
-.PHONY : src/main.s
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.s:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.s
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.cpp.s
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.o: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.o
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.o
+
+# target to build an object file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.o:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.o
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.o
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.i: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.i
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.i
+
+# target to preprocess a source file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.i:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.i
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.i
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.s: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.s
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.s
+
+# target to generate assembly for a file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.s:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.s
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.s
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.o: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.o
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.o
+
+# target to build an object file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.o
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.o
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.i: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.i
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.i
+
+# target to preprocess a source file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.i
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.i
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.s: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.s
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.s
+
+# target to generate assembly for a file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.s
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.s
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.o: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.o
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.o
+
+# target to build an object file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.o:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.o
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.o
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.i: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.i
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.i
+
+# target to preprocess a source file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.i:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.i
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.i
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.s: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.s
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.s
+
+# target to generate assembly for a file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.s:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.s
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.cpp.s
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.o: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.o
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.o
+
+# target to build an object file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.o:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.o
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.o
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.i: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.i
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.i
+
+# target to preprocess a source file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.i:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.i
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.i
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.s: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.s
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.s
+
+# target to generate assembly for a file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.s:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.s
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.cpp.s
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.o: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.o
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.o
+
+# target to build an object file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.o:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.o
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.o
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.i: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.i
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.i
+
+# target to preprocess a source file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.i:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.i
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.i
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.s: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.s
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.s
+
+# target to generate assembly for a file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.s:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.s
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.cpp.s
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.o: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.o
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.o
+
+# target to build an object file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.o:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.o
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.o
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.i: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.i
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.i
+
+# target to preprocess a source file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.i:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.i
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.i
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.s: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.s
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.s
+
+# target to generate assembly for a file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.s:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.s
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.cpp.s
 
 # Help Target
 help:
@@ -159,9 +321,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... jpeg-enc"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.o"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.i"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/dct.s"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.o"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.i"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.s"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.o"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.i"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.s"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.o"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.i"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/quantize.s"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.o"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.i"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/resize.s"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.o"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.i"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/rgb_ycbcr.s"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.o"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.i"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/zigzag.s"
 .PHONY : help
 
 
