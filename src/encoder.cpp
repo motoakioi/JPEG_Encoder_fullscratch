@@ -62,12 +62,6 @@ void encode(
 		}// for loop of x
 	}//for loop of y
 
-	// TODO : remove
-	mcu_data[ 0 ].ys();
-	mcu_data[ 0 ].bs();
-	mcu_data[ 0 ].rs();
-
-
 	for (int mcu_order = 0; mcu_order < all_mcu; mcu_order++ ){
 		for ( int mcu_component = 0; mcu_component < 6; mcu_component++ ){
 
@@ -81,6 +75,22 @@ void encode(
 
 			// DCT
 			dct( tmp_val, tmp_dct );
+			
+			std::cout << "tmp val :" << std::endl;
+			for ( int y = 0; y < 8; y++ ){
+				for ( int x = 0; x < 8; x++ ){
+					std::cout << tmp_val[x][y] << "  ";
+				}
+				std::cout << std::endl;
+			}
+
+			std::cout << "dct val :" << std::endl;
+			for ( int y = 0; y < 8; y++ ){
+				for ( int x = 0; x < 8; x++ ){
+					std::cout << tmp_dct[x][y] << "  ";
+				}
+				std::cout << std::endl;
+			}
 
 			// Quantize
 			quantize( tmp_dct, tmp_quant, quantize_table );

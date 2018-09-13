@@ -66,10 +66,29 @@ void mcu::set_block( int mcu_x, int mcu_y, YCbCr *in_ycbcr){
 	}
 }
 void mcu::write_block( int i,  double dct_vals[8][8] ){
-		dct[i].path_from( dct_vals );
+	dct[i].path_from( dct_vals );
 }
 void mcu::read_block( int i,  double dct_vals[8][8] ){
-		dct[i].path_to( dct_vals );
+	switch( i ){
+	case 0:
+		y_block[0][0].path_to( dct_vals );
+		break;
+	case 1:
+		y_block[1][0].path_to( dct_vals );
+		break;
+	case 2:
+		y_block[0][1].path_to( dct_vals );
+		break;
+	case 3:
+		y_block[1][1].path_to( dct_vals );
+		break;
+	case 4:
+		cr_block.path_to( dct_vals );
+		break;
+	case 5:
+		cb_block.path_to( dct_vals );
+		break;
+	}
 }
 void mcu::write_line( int in[64] ){
 	for ( int i = 0; i < 64; i++ ){
