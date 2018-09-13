@@ -9,9 +9,9 @@ main func :
 bmp -> RGB -> encode (midstream) ...  
 
 encode func :  
-RGB -> YCbCr -> MCU -> ...  
+RGB -> YCbCr -> MCU -> DCT -> Quantize ...  
 
-Not done since DCT.
+Not completed after scaning.
 
 ## File Organization
 .  
