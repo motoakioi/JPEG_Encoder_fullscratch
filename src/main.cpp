@@ -5,6 +5,7 @@
 #include"encoder.h"
 #include"bmp.h"
 #include"rgb_ycbcr.h"
+#include"jpeg.h"
 
 int main(int argc, char* argv[]){
 
@@ -73,6 +74,21 @@ int main(int argc, char* argv[]){
 	std::cout << "OK " << std::endl << "Writing JPEG file... ";
 
 	// Output File
+	std::ofstream jpeg_image( "out.jpg", std::ios::out | std::ios::binary | std::ios::trunc );
+
+	// In case that can't open output file
+	if( !jpeg_image ){
+		std::cerr << "Error!" << std::endl;
+		std::cerr << "Could NOT open output file." << std::endl;
+		return -1;
+	}
+
+	// Prepare JPEG header
+	JPEGHEADER jpeg_header;
+
+	jpeg_image.write( (char*)&jpeg_header, sizeof(JPEGHEADER) );
+
+
 
 	return 0;
 }

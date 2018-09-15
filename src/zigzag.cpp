@@ -9,6 +9,5 @@ void zigzag_scan( int in[8][8], int out[64] ){
 			out[ zigzag_order[ x + y * 8 ] ] = in[x][y];
 		}// for loop of x
 	}// for loop of y
-
 }
 

@@ -12,10 +12,9 @@
 #include"zigzag.h"
 
 
-void encode( 
-		int ori_height, 
-		int ori_width, 
-		std::vector<RGB>& in_rgb){
+void encode( int ori_height, 
+			 int ori_width, 
+			 std::vector<RGB>& in_rgb ){
 
 	int all_pixels = ori_height * ori_width;
 	std::vector<YCbCr> in_ycbcr( all_pixels, YCbCr( 0.0, 0.0, 0.0 ) );
@@ -40,8 +39,6 @@ void encode(
 	for (int y = 0; y < height; y++ ) {
 		for (int x = 0; x < width; x++ ) {
 
-//			std::cout<< "(" << x << "," << y << ")";
-
 			if ( x + 1 > ori_width ||  y + 1 > ori_height ){
 				pos--;
 			}
@@ -62,6 +59,7 @@ void encode(
 		}// for loop of x
 	}//for loop of y
 
+	// Data compression for each MCU
 	for (int mcu_order = 0; mcu_order < all_mcu; mcu_order++ ){
 		for ( int mcu_component = 0; mcu_component < 6; mcu_component++ ){
 
@@ -79,16 +77,16 @@ void encode(
 			// Quantize
 			quantize( tmp_dct, tmp_quant, &mcu_component, quantize_table );
 				std::cout << "quant" << std::endl;
-			
-			for ( int y = 0; y < 8; y++ ){
-				for ( int x = 0; x < 8; x++ ){
-				std::cout << tmp_quant[x][y] << " ";
-				}
-				std::cout << std::endl;
-			}
 
 			// ZigZag Scan
 			zigzag_scan( tmp_quant, tmp_scand );
+
+			// TODO : remove
+			std::cout << "scaned ";
+			for ( int i = 0; i < 64; i++ ){
+				std::cout << tmp_scand[i] << " ";
+			}
+			std::cout << std::endl;
 
 			// RunLegth
 			
@@ -96,5 +94,6 @@ void encode(
 			
 		}// for loop of mcu_component
 	}// for loop of mcu_order
-}// main
+
+}// End  of encode func.
 

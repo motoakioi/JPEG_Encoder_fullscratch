@@ -3,7 +3,7 @@
 
 // BITMAPFILEHEADER 14bytes
 #pragma pack(1)
-typedef struct tagBITMAPFILEHEADER {
+typedef struct BITMAPFILEHEADER {
 	uint16_t bfType;
 	uint32_t bfSize;
 	uint16_t bfReserved1;
@@ -13,7 +13,7 @@ typedef struct tagBITMAPFILEHEADER {
 
 // BITMAPINFOHEADER 40bytes
 #pragma pack(1)
-typedef struct tagBITMAPINFOHEADER{
+typedef struct BITMAPINFOHEADER {
 	uint32_t biSize;
 	int32_t biWidth;
 	int32_t biHeight;
