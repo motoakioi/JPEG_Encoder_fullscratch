@@ -1,5 +1,6 @@
 #include<iostream>
-#include<fstream>
+//#include<fstream>
+#include<stdio.h>
 #include<vector>
 
 #include"encoder.h"
@@ -24,7 +25,8 @@ int main(int argc, char* argv[]){
 	std::cout << "Opening input file... ";
 
 	// Open bmp file (argv[1])
-	std::ifstream bmp_image( argv[1], std::ios::in | std::ios::binary );
+	//std::ifstream bmp_image( argv[1], std::ios::in | std::ios::binary );
+	FILE* bmp_image = fopen( argv[1], "rb");
 
 	// In case that can't open input file 
 	if ( !bmp_image ){
@@ -34,8 +36,11 @@ int main(int argc, char* argv[]){
 	}
 
 	// Read header of bmp file
-	bmp_image.read( (char*)&file_header, sizeof(BITMAPFILEHEADER) );
-	bmp_image.read( (char*)&info_header, sizeof(BITMAPINFOHEADER) );
+	//bmp_image.read( (char*)&file_header, sizeof(BITMAPFILEHEADER) );
+	fread( &file_header, sizeof(BITMAPFILEHEADER), 1, bmp_image );
+
+	//bmp_image.read( (char*)&info_header, sizeof(BITMAPINFOHEADER) );
+	fread( &info_header, sizeof(BITMAPINFOHEADER), 1, bmp_image );
 
 	// In case that input is not bmp file
 	if ( file_header.bfType != 0x4d42 ){
@@ -56,7 +61,9 @@ int main(int argc, char* argv[]){
 	for ( int y = 0; y < height; y++ ){
 		for ( int x = 0; x < width; x++ ){
 			int tmp_data;
-			bmp_image.read( (char*)&tmp_data, ( sizeof(char) * 3 ) );
+			//bmp_image.read( (char*)&tmp_data, ( sizeof(char) * 3 ) );
+			fread( &tmp_data, ( sizeof(char) * 3 ), 1, bmp_image );
+
 			rgb_data[ ( height - 1 - y ) * width + x ].set_data( &tmp_data ); 
 			if(x == 0 && y == 0){
 				std::cout << "R is :" << rgb_data[( height - 1 - y ) * width + x].r_is() << std::endl;
@@ -66,6 +73,9 @@ int main(int argc, char* argv[]){
 		}
 	}
 
+	// Close input file
+	fclose( bmp_image );
+
 	std::cout << "OK " << std::endl << "Encoding... ";
 
 	// Execute JPEG Encoder function
@@ -74,7 +84,8 @@ int main(int argc, char* argv[]){
 	std::cout << "OK " << std::endl << "Writing JPEG file... ";
 
 	// Output File
-	std::ofstream jpeg_image( "out.jpg", std::ios::out | std::ios::binary | std::ios::trunc );
+	//std::ofstream jpeg_image( "out.jpg", std::ios::out | std::ios::binary | std::ios::trunc )
+	FILE* jpeg_image = fopen( "out.jpg", "wb" );
 
 	// In case that can't open output file
 	if( !jpeg_image ){
@@ -86,9 +97,10 @@ int main(int argc, char* argv[]){
 	// Prepare JPEG header
 	JPEGHEADER jpeg_header;
 
-	jpeg_image.write( (char*)&jpeg_header, sizeof(JPEGHEADER) );
+	// jpeg_image.write( (char*)&jpeg_header, sizeof(JPEGHEADER) );
+	fwrite( &jpeg_header, 1, sizeof(JPEGHEADER), jpeg_image );
 
-
+	// Close output file
 
 	return 0;
 }
