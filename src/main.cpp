@@ -7,6 +7,7 @@
 #include"bmp.h"
 #include"rgb_ycbcr.h"
 #include"jpeg.h"
+//#include"quantize_table.h"
 
 int main(int argc, char* argv[]){
 
@@ -96,6 +97,8 @@ int main(int argc, char* argv[]){
 
 	// Prepare JPEG header
 	JPEGHEADER jpeg_header;
+
+//	memcpy( jpeg_header.DQT_LUMA,  quantize_table[0], sizeof(jpeg_header.DQT_LUMA) );
 
 	// jpeg_image.write( (char*)&jpeg_header, sizeof(JPEGHEADER) );
 	fwrite( &jpeg_header, 1, sizeof(JPEGHEADER), jpeg_image );
