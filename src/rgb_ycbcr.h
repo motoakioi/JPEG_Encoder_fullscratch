@@ -23,9 +23,17 @@ class RGB{
 			return B;
 		}
 		void set_data( int *in ){
-			R = *in & 0xFF;
-			G = ( *in & 0xFF00 ) >> 8;
+
+/*			// In case of Big endianness, this is correct
+			R =   *in & 0xFF;
+			G = ( *in & 0xFF00   ) >>  8;
 			B = ( *in & 0xFF0000 ) >> 16;
+*/
+			// In case of Little endianness
+			R = ( *in & 0xFF0000 ) >> 16;
+			G = ( *in & 0xFF00   ) >>  8;
+			B =   *in & 0xFF;
+
 		}
 };
 
