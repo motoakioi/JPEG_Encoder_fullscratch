@@ -177,6 +177,33 @@ Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.s:
 	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.s
 .PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.cpp.s
 
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.o: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.o
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.o
+
+# target to build an object file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.o:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.o
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.o
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.i: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.i
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.i
+
+# target to preprocess a source file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.i:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.i
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.i
+
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.s: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.s
+
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.s
+
+# target to generate assembly for a file
+Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.s:
+	$(MAKE) -f CMakeFiles/jpeg-enc.dir/build.make CMakeFiles/jpeg-enc.dir/Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.s
+.PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.cpp.s
+
 Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.o: Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.cpp.o
 
 .PHONY : Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.o
@@ -327,6 +354,9 @@ help:
 	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.o"
 	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.i"
 	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/encoder.s"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.o"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.i"
+	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/huffman_encoding.s"
 	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.o"
 	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.i"
 	@echo "... Users/motoaki/Documents/GitHub/JPEG_Encoder_fullscratch/src/main.s"

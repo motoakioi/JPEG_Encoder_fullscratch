@@ -58,7 +58,7 @@ int main(int argc, char* argv[]){
 	std::cout <<  "OK" << std::endl << "Width : " << width << ", Height : " << height << std::endl;
 	std::cout << "Loading bmp data... ";
 
-
+	// Load bmp data
 	for ( int y = 0; y < height; y++ ){
 		for ( int x = 0; x < width; x++ ){
 			int tmp_data;
@@ -80,20 +80,13 @@ int main(int argc, char* argv[]){
 	std::cout << "OK " << std::endl << "Encoding... ";
 
 	// Declare output variables
-	std::vector<int> run_length_data;
+	std::vector<char> run_length_data;
 	int length = 0;
 
 	// Execute JPEG Encoder function
 	encode( height, width, rgb_data, run_length_data, &length );
 
 	std::cout << "OK " << std::endl << "Writing JPEG file... ";
-
-	// TODO :remove
-	std::cout << "run data :  " << std::endl;
-	for( int i = 0 ; i < 64; i++ ){
-		std::cout << run_length_data[i] << " ";
-	}
-	std::cout << std::endl;
 
 	// Output File
 	//std::ofstream jpeg_image( "out.jpg", std::ios::out | std::ios::binary | std::ios::trunc )
@@ -113,6 +106,16 @@ int main(int argc, char* argv[]){
 
 	// jpeg_image.write( (char*)&jpeg_header, sizeof(JPEGHEADER) );
 	fwrite( &jpeg_header, 1, sizeof(JPEGHEADER), jpeg_image );
+
+	// TODO :remove
+	std::cout << "run data :  " << std::endl;
+	for( int i = 0 ; i < length; i++ ){
+		std::cout << (int)run_length_data[i] << " ";
+
+		fwrite( &run_length_data[i], 1, sizeof(char), jpeg_image );
+
+	}
+	std::cout << std::endl;
 
 	// Close output file
 	fclose( jpeg_image );

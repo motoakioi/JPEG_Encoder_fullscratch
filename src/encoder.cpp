@@ -10,13 +10,13 @@
 #include"quantize.h"
 #include"quantize_table.h"
 #include"zigzag.h"
-
+#include"huffman_encoding.h"
 
 void encode( int ori_height, 
 			 int ori_width, 
 			 std::vector<RGB>& in_rgb,
-			 std::vector<int>& out_encoded,
-			 int* run_length ){
+			 std::vector<char>& out_encoded,
+			 int* length ){
 
 	int all_pixels = ori_height * ori_width;
 	std::vector<YCbCr> in_ycbcr( all_pixels, YCbCr( 0.0, 0.0, 0.0 ) );
@@ -61,14 +61,20 @@ void encode( int ori_height,
 		}// for loop of x
 	}//for loop of y
 
+	int Y_DC_tmp = 0;
+	int Cb_DC_tmp = 0;
+	int Cr_DC_tmp = 0;
+
 	// Data compression for each MCU
 	for (int mcu_order = 0; mcu_order < all_mcu; mcu_order++ ){
+
 		for ( int mcu_component = 0; mcu_component < 6; mcu_component++ ){
 
 			double tmp_val[8][8];
 			double tmp_dct[8][8];
 			int tmp_quant[8][8];
 			int tmp_scand[64];
+			std::vector<char>tmp_huffman;
 
 			// copy mcu_data into tmp_val
 			mcu_data[ mcu_order ].read_block( mcu_component, tmp_val );
@@ -83,21 +89,39 @@ void encode( int ori_height,
 			// ZigZag Scan
 			zigzag_scan( tmp_quant, tmp_scand );
 
+/*
 			// TODO : remove
 			std::cout << "scaned ";
 			for ( int i = 0; i < 64; i++ ){
 				std::cout << tmp_scand[i] << " ";
 
 				// TODO : move
-				out_encoded.push_back( tmp_scand[i] );
+				out_encoded.push_back( (char)tmp_scand[i] );
 			}
 			std::cout << std::endl;
+*/
 
 			// RunLegth
+			// In case of Y
+			if ( mcu_component < 4 ){
+				huffman_encode( tmp_scand, &Y_DC_tmp, out_encoded );
 
-			
+			// In case of Cb
+			}else if ( mcu_component < 5 ){
+				huffman_encode( tmp_scand, &Cb_DC_tmp, out_encoded );
+
+			//In case of Cr
+			}else{
+				huffman_encode( tmp_scand, &Cr_DC_tmp, out_encoded );
+
+			}
+
 		}// for loop of mcu_component
 	}// for loop of mcu_order
+
+	*length = out_encoded.size();
+
+	std::cout << "length :" << *length << std::endl;
 
 }// End  of encode func.
 
