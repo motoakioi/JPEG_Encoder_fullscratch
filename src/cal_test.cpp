@@ -1,13 +1,20 @@
 #include<iostream>
+#include<stdio.h>
 
 int main(void){
 
-	int in = 1;
-	double in2 = 3.5;
+	char test_c[1] = {3};
+	char test_i[1];
 
-	int out = in2 / in;
+	int in = 5;
 
-	std::cout << out << std::endl;
+	FILE *fp = fopen( "test_out", "r" );
+
+	test_i[0] = (char)in;
+
+	fwrite( test_i, 1, sizeof(char), fp );
+
+	std::cout << (int)test_c[0] << "test" << (int)test_i[0] << ") "<< std::endl;
 
 	return 0;
 }

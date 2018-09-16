@@ -10,5 +10,5 @@ add_executable(jpeg-enc
 	../src/dct.cpp
 	../src/quantize.cpp
 	../src/zigzag.cpp
-	../src/
+	../src/huffman_encoding.cpp
 	)
