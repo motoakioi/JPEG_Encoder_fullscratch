@@ -14,7 +14,9 @@
 
 void encode( int ori_height, 
 			 int ori_width, 
-			 std::vector<RGB>& in_rgb ){
+			 std::vector<RGB>& in_rgb,
+			 std::vector<int>& out_encoded,
+			 int* run_length ){
 
 	int all_pixels = ori_height * ori_width;
 	std::vector<YCbCr> in_ycbcr( all_pixels, YCbCr( 0.0, 0.0, 0.0 ) );
@@ -85,11 +87,13 @@ void encode( int ori_height,
 			std::cout << "scaned ";
 			for ( int i = 0; i < 64; i++ ){
 				std::cout << tmp_scand[i] << " ";
+
+				// TODO : move
+				out_encoded.push_back( tmp_scand[i] );
 			}
 			std::cout << std::endl;
 
 			// RunLegth
-			
 
 			
 		}// for loop of mcu_component

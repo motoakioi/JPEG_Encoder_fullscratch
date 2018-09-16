@@ -79,10 +79,21 @@ int main(int argc, char* argv[]){
 
 	std::cout << "OK " << std::endl << "Encoding... ";
 
+	// Declare output variables
+	std::vector<int> run_length_data;
+	int length = 0;
+
 	// Execute JPEG Encoder function
-	encode( height, width, rgb_data );
+	encode( height, width, rgb_data, run_length_data, &length );
 
 	std::cout << "OK " << std::endl << "Writing JPEG file... ";
+
+	// TODO :remove
+	std::cout << "run data :  " << std::endl;
+	for( int i = 0 ; i < 64; i++ ){
+		std::cout << run_length_data[i] << " ";
+	}
+	std::cout << std::endl;
 
 	// Output File
 	//std::ofstream jpeg_image( "out.jpg", std::ios::out | std::ios::binary | std::ios::trunc )
@@ -104,6 +115,7 @@ int main(int argc, char* argv[]){
 	fwrite( &jpeg_header, 1, sizeof(JPEGHEADER), jpeg_image );
 
 	// Close output file
+	fclose( jpeg_image );
 
 	return 0;
 }

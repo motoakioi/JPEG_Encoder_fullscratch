@@ -4,6 +4,6 @@
 #include<vector>
 #include "rgb_ycbcr.h"
 
-void encode( int, int, std::vector<RGB>& );
+void encode( int, int, std::vector<RGB>&, std::vector<int>&, int* );
 
 #endif
