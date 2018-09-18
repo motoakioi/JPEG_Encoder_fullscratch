@@ -79,12 +79,39 @@ void encode( int ori_height,
 			// copy mcu_data into tmp_val
 			mcu_data[ mcu_order ].read_block( mcu_component, tmp_val );
 
+			std::cout << "tmp : " << std::endl;
+			for ( int y = 0; y < 8; y++ ){
+				for ( int x = 0; x < 8; x++ ){
+					std::cout << " " << tmp_val[x][y];
+					}
+				std::cout << std::endl;
+			}
+
 			// DCT
 			dct( tmp_val, tmp_dct );
 
+			std::cout << "out : " << std::endl;
+			for ( int y = 0; y < 8; y++ ){
+				for ( int x = 0; x < 8; x++ ){
+					std::cout << " " << tmp_dct[x][y];
+					}
+				std::cout << std::endl;
+			}
+
+			// TODO : remove
+			double idct_val[8][8];
+			idct( tmp_dct, idct_val );
+			std::cout << "idct : " << std::endl;
+			for ( int y = 0; y < 8; y++ ){
+				for ( int x = 0; x < 8; x++ ){
+					std::cout << " " << idct_val[x][y];
+					}
+				std::cout << std::endl;
+			}
+
+
 			// Quantize
 			quantize( tmp_dct, tmp_quant, &mcu_component, quantize_table );
-				std::cout << "quant" << std::endl;
 
 			// ZigZag Scan
 			zigzag_scan( tmp_quant, tmp_scand );

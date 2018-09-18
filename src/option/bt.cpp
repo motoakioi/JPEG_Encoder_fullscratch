@@ -1,11 +1,29 @@
 #include<iostream>
 #include<math.h>
 
-#include"dct.h"
+#include"bt.h"
+
+// [u][x]
+double table[8][8] = {
+	{1,  1,  1,  1,  1,  1,  1,  1 },
+	{1,  1,  0,  0,  0, -1, -1, -1 },
+	{1,  1,  0,  0, -1, -1, -1, -1 },
+	{1,  0,  0,  0, -1, -1,  0,  0 },
+	{1,  0,  0, -1, -1,  0,  0,  1 },
+	{1,  1, -1, -1,  0,  1,  1,  0 },
+	{1,  0, -1,  0,  1,  0, -1,  0 },
+	{1, -1,  1, -1,  1, -1,  1, -1 }
+};
 
 
-void dct( double in[8][8], double out[8][8] ){
-	for ( int v = 0; v < 8; v++ ){
+
+void bt( double in[8][8], double out[8][8] ){
+for( int x = 0; x < 8; x++){
+	for(int u = 0; u < 8; u++){
+		table[u][x] = cos( ( 2 * x + 1 ) * u * M_PI / (2.0 * 8) );
+	}
+}
+for ( int v = 0; v < 8; v++ ){
 		double C_v = ( v == 0 ) ? 1 / sqrt(2) : 1;
 
 		for ( int u =0; u < 8; u++ ){
@@ -18,10 +36,10 @@ void dct( double in[8][8], double out[8][8] ){
 				double tmp_y = 0.0;
 
 				for ( int y = 0; y < 8; y++ ){
-					tmp_y += in[x][y] * cos( ( 2.0 * y + 1.0 ) * v * M_PI  / 16.0 ); 
+					tmp_y += in[x][y] * table[v][y]; 
 				}// for loop of y
 
-				tmp_x += tmp_y * cos( ( 2.0 * x + 1.0 ) * u * M_PI / 16.0 );
+				tmp_x += tmp_y * table[u][x];
 
 			}// for loop of x
 
@@ -32,7 +50,8 @@ void dct( double in[8][8], double out[8][8] ){
 
 }
 
-void idct( double in[8][8], double out[8][8] ){
+
+void ibt( double in[8][8], double out[8][8] ){
 	for ( int y = 0; y < 8; y++ ){
 
 		for ( int x = 0; x < 8; x++ ){
@@ -45,10 +64,10 @@ void idct( double in[8][8], double out[8][8] ){
 				for ( int v = 0; v < 8; v++ ){
 					double C_v = ( v == 0 ) ? 1 / sqrt(2) : 1;
 
-					tmp_v += C_u * C_v * in[u][v] * cos( ( 2.0 * y + 1.0 ) * v * M_PI  / 16.0 ); 
+					tmp_v += C_u * C_v * in[u][v] * table[v][y]; 
 				}// for loop of v
 
-				tmp_u += tmp_v * cos( ( 2.0 * x + 1.0 ) * u * M_PI / 16.0 );
+				tmp_u += tmp_v * table[u][x];
 
 			}// for loop of u
 
@@ -58,3 +77,4 @@ void idct( double in[8][8], double out[8][8] ){
 	}// for loop of y
 
 }
+
