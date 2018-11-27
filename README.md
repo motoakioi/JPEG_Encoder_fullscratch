@@ -1,5 +1,5 @@
 # JPEG_Encoder_fullscratch
-## discontinue development in this repository
+## now, discontinue development in this repository
 
 Aim for full scratch, something like that.
 
